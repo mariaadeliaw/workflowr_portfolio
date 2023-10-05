@@ -1,7 +1,7 @@
-name: "workflowr_portfolio"
+name: workflowr_portfolio
 output_dir: ../docs
 navbar:
-  title: "workflowr_portfolio"
+  title: workflowr_portfolio
   left:
   - text: Home
     href: index.html
@@ -9,6 +9,10 @@ navbar:
     href: about.html
   - text: License
     href: license.html
+  right:
+  - icon: fab fa-github
+    text: Source code
+    href: https://github.com/mariaadeliaw/workflowr_portfolio
 output:
   workflowr::wflow_html:
     toc: yes
