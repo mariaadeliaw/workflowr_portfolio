@@ -1,0 +1,31 @@
+---
+title: "teeth"
+author: "mariaadeliaw"
+date: "2023-10-05"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+teeth <- readr::read_csv("data/teeth.csv")
+head(teeth)
+```
+
+```{r boxplots}
+boxplot(len ~ dose, data = teeth)
+boxplot(len ~ supp, data = teeth)
+boxplot(len ~ dose + supp, data = teeth)
+```
+
+```{r permute}
+mean(teeth$len[teeth$supp == "OJ"]) - mean(teeth$len[teeth$supp == "VC"])
+# Permute the observations
+supp_perm <- sample(teeth$supp)
+# Calculate mean difference in permuted data
+mean(teeth$len[supp_perm == "OJ"]) - mean(teeth$len[supp_perm == "VC"])
+```
+
+
